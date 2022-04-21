@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-torrent": {
+      "hosting": {
+        "webkert-torrent": [
+          "webkert-torrent"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-torrent"
+  }
+}
