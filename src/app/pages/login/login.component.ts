@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
   async login() {
     this.loading = true;
 
-    this.authService.login(this.email.value, this.password.value).then((cred: { user: any; }) => {
+    this.authService.login(this.email.value, this.password.value).then((cred: { user: firebase.default.User | null; }) => {
       console.log("LOGIN SUCCESS");
-      localStorage.setItem("user", JSON.stringify(cred.user));
+      console.log(cred);
       this.router.navigateByUrl('/main');
       this.loading = false;
     }).catch((error: any) => {

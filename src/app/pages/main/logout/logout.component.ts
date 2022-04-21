@@ -16,7 +16,6 @@ export class LogoutComponent implements OnInit {
 
   async logout() {
    this.authService.logout().then(() => {
-     localStorage.removeItem("user");
      console.log("LOGOUT SUCCESS");
      this.router.navigateByUrl('/login');
    }).catch((error: any) => {

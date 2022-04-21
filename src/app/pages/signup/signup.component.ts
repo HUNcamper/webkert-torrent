@@ -29,6 +29,20 @@ export class SignupComponent implements OnInit {
   }
 
   async signup() {
+    this.loading = true;
 
+    this.authService.signup(this.email.value, this.password.value).then((cred: { user: firebase.default.User | null; }) => {
+      localStorage.setItem("user", JSON.stringify(cred.user));
+      console.log("SIGNUP SUCCESS");
+      this.router.navigateByUrl('/main');
+      this.loading = false;
+    }).catch((error: any) => {
+      console.error(error);
+      this.loading = false;
+    });
+  }
+
+  ngOnDestroy() {
+    this.loadingSubscription?.unsubscribe();
   }
 }
