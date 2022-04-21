@@ -12,7 +12,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { LogoutModule } from './pages/logout/logout.module';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { LogoutModule } from './pages/logout/logout.module';
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    LogoutModule
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]
