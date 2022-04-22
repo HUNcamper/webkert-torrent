@@ -3,22 +3,21 @@
 </span>
 
 <div class="main_component">
-  <h1>WEBKERT TORRENT</h1>
-  <mat-form-field>
-    <mat-label for="email">First Name: </mat-label><input matInput type="text" [formControl]="firstname" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label for="email">Last Name: </mat-label><input matInput type="text" [formControl]="lastname" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label for="email">Email: </mat-label><input matInput type="text" [formControl]="email" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label for="password">Password: </mat-label><input matInput type="password" [formControl]="password" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label for="password_again">Password again: </mat-label><input matInput type="password" [formControl]="password_again" />
-  </mat-form-field>
+  <h1>Register an account!</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label for="email">Email: </mat-label><input matInput type="text" [formControl]="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="username">Username: </mat-label><input matInput type="text" [formControl]="username" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="password">Password: </mat-label><input matInput type="password" [formControl]="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="password_again">Password again: </mat-label><input matInput type="password" [formControl]="password_again" />
+    </mat-form-field>
+  </form>
   <span>
         <span><button mat-raised-button color="primary" (click)="signup()">Sign Up</button></span>
         <span><button mat-raised-button color="primary" [routerLink]="'/login'">Cancel</button></span>

@@ -35,14 +35,15 @@ export class AppComponent implements OnInit {
         this.page = currentPage;
       }
     });
-    this.authService.isUserLoggedIn().subscribe(user => {
+    /*this.authService.isUserLoggedIn().subscribe(user => {
+      console.log("LOGGED IN");
       console.log(user);
       this.loggedInUser = user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
     }, error => {
       console.error(error);
       localStorage.setItem('user', JSON.stringify('null'));
-    });
+    });*/
   }
 
   changePage(selectedPage: string) {

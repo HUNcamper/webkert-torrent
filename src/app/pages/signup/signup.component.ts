@@ -12,37 +12,42 @@ import {AuthService} from "../../shared/services/auth.service";
 })
 export class SignupComponent implements OnInit {
 
-  firstname = new FormControl('');
-  lastname = new FormControl('');
-  email = new FormControl('');
-  password = new FormControl('');
-  password_again = new FormControl('');
+  signUpForm = new FormGroup({
+    email: new FormControl(''),
+    username: new FormControl(''),
+    password: new FormControl(''),
+    rePassword: new FormControl('')
+  });
 
-  loadingSubscription?: Subscription;
-  loadingObservation?: Observable<boolean>;
-
-  loading: boolean = false;
-
-  constructor(private router: Router, private loadingService: FakeLoadingService, private authService: AuthService) { }
+  constructor(private location: Location, private authService: AuthService, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
-  async signup() {
-    this.loading = true;
-
-    this.authService.signup(this.email.value, this.password.value).then((cred: { user: firebase.default.User | null; }) => {
-      localStorage.setItem("user", JSON.stringify(cred.user));
-      console.log("SIGNUP SUCCESS");
-      this.router.navigateByUrl('/main');
-      this.loading = false;
-    }).catch((error: any) => {
+  onSubmit() {
+    console.log(this.signUpForm.value);
+    this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
+      console.log(cred);
+      const user: User = {
+        id: cred.user?.uid as string,
+        email: this.signUpForm.get('email')?.value,
+        username: this.signUpForm.get('username')?.value,
+        ratio: {
+          download: 0,
+          upload: 0
+        }
+      };
+      this.userService.create(user).then(_ => {
+        console.log('User added successfully.');
+      }).catch(error => {
+        console.error(error);
+      })
+    }).catch(error => {
       console.error(error);
-      this.loading = false;
     });
   }
 
-  ngOnDestroy() {
-    this.loadingSubscription?.unsubscribe();
+  goBack() {
+    this.location.back();
   }
 }
