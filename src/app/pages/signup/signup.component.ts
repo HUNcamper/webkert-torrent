@@ -1,9 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {Observable, Subscription} from "rxjs";
-import {Router} from "@angular/router";
-import {FakeLoadingService} from "../../shared/services/fake-loading.service";
-import {AuthService} from "../../shared/services/auth.service";
+import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../../shared/services/auth.service';
+import { User } from '../../shared/models/User';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-signup',
