@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { AuthService } from './shared/services/auth.service';
+import { UserService } from './shared/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
     this.router = router;
   } */
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router, private authService: AuthService, private userService: UserService) {
     // parameter adattagok
   }
 
@@ -35,15 +36,27 @@ export class AppComponent implements OnInit {
         this.page = currentPage;
       }
     });
-    /*this.authService.isUserLoggedIn().subscribe(user => {
+    this.authService.isUserLoggedIn().subscribe(user => {
       console.log("LOGGED IN");
       console.log(user);
+      console.log("DETAILS");
+
+      if (localStorage.getItem('user-details') !== "null" ) {
+        this.userService.getById((user as firebase.default.User).uid).subscribe(data => {
+          console.log(data);
+          localStorage.setItem('user-details', JSON.stringify(data));
+        }, error => {
+          console.error(error);
+        });
+      }
+
       this.loggedInUser = user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
     }, error => {
       console.error(error);
       localStorage.setItem('user', JSON.stringify('null'));
-    });*/
+      localStorage.setItem('user-details', JSON.stringify('null'));
+    });
   }
 
   changePage(selectedPage: string) {

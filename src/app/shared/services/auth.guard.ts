@@ -13,6 +13,8 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const user = JSON.parse(localStorage.getItem('user') as string);
     if (user) {
+      console.log("Logged in user:");
+      console.log(user);
       return true;
     } else {
       console.log("Not logged in, redirecting...");

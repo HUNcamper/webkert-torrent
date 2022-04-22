@@ -9,9 +9,12 @@ export class AuthService {
   constructor(private auth: AngularFireAuth) { }
 
   login(email: string, password: string) {
-    let cred = this.auth.signInWithEmailAndPassword(email, password);
-    localStorage.setItem('user', JSON.stringify(cred));
-    return cred;
+    //localStorage.setItem('user', JSON.stringify(cred));
+
+    //let credDetails = UserService.getById(cred.user.uid as string)
+
+    //localStorage.setItem('user-details', JSON.stringify(credDetails))
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
 
   signup(email: string, password: string) {
