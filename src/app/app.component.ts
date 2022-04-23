@@ -39,16 +39,15 @@ export class AppComponent implements OnInit {
     this.authService.isUserLoggedIn().subscribe(user => {
       console.log("LOGGED IN");
       console.log(user);
-      console.log("DETAILS");
 
-      if (localStorage.getItem('user-details') !== "null" ) {
+      /*if (localStorage.getItem('user-details') !== "null" ) {
         this.userService.getById((user as firebase.default.User).uid).subscribe(data => {
           console.log(data);
           localStorage.setItem('user-details', JSON.stringify(data));
         }, error => {
           console.error(error);
         });
-      }
+      }*/
 
       this.loggedInUser = user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
@@ -72,13 +71,5 @@ export class AppComponent implements OnInit {
     if (event === true) {
       sidenav.close();
     }
-  }
-
-  logout(_?: boolean) {
-    this.authService.logout().then(() => {
-      console.log('Logged out successfully.');
-    }).catch(error => {
-      console.error(error);
-    });
   }
 }

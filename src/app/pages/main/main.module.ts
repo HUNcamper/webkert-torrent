@@ -7,6 +7,7 @@ import { LogoutComponent } from './logout/logout.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import { TorrentComponent } from './torrent/torrent.component';
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -18,11 +19,12 @@ import { TorrentComponent } from './torrent/torrent.component';
   exports: [
     MainComponent
   ],
-    imports: [
-        CommonModule,
-        MainRoutingModule,
-        MatButtonModule,
-        MatCardModule
-    ]
+  imports: [
+    CommonModule,
+    MainRoutingModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
+  ]
 })
 export class MainModule { }

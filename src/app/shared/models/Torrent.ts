@@ -5,4 +5,5 @@ export interface Torrent {
     description: string;
     image_url: string;
     type_id: number;
+    verified: boolean;
 }

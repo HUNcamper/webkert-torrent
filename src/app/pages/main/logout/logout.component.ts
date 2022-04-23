@@ -15,11 +15,11 @@ export class LogoutComponent implements OnInit {
   }
 
   async logout() {
-   this.authService.logout().then(() => {
-     console.log("LOGOUT SUCCESS");
-     this.router.navigateByUrl('/login');
-   }).catch((error: any) => {
-     console.error(error);
-   });
+    this.authService.logout().then(() => {
+      console.log("LOGOUT SUCCESS");
+      this.router.navigateByUrl('/login');
+    }).catch(error => {
+      console.error(error);
+    });
   }
 }

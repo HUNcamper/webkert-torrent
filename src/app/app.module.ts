@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -22,18 +24,20 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     HeaderComponent,
     FooterComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MainModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        // provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => getFirestore()),
-        provideStorage(() => getStorage()),
-        MatToolbarModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MainModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
