@@ -1,4 +1,4 @@
-div {
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,4 +17,9 @@ span {
 
 mat-form-field {
   width: 50%;
+}
+
+.loading-indicator {
+  position: absolute;
+  bottom: 25px;
 }

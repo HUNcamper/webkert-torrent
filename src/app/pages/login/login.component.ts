@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { FakeLoadingService } from '../../shared/services/fake-loading.service';
@@ -12,8 +12,10 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  email = new FormControl('');
-  password = new FormControl('');
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
 
   loadingSubscription?: Subscription;
   loadingObservation?: Observable<boolean>;
@@ -28,7 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   async login() {
     this.loading = true;
 
-    this.authService.login(this.email.value, this.password.value).then((cred: { user: firebase.default.User | null; }) => {
+    this.authService.login(this.loginForm.get('email')?.value, this.loginForm.get('password')?.value).then((cred: { user: firebase.default.User | null; }) => {
       console.log("LOGIN SUCCESS");
       console.log(cred);
       this.router.navigateByUrl('/main');

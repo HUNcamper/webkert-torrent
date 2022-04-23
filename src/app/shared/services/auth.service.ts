@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.setItem('user', JSON.stringify('null'));
+    localStorage.removeItem('user');
     return this.auth.signOut();
   }
 

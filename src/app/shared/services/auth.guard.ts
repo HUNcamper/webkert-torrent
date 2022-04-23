@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const user = JSON.parse(localStorage.getItem('user') as string);
+    const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
     if (user) {
       console.log("Logged in user:");
       console.log(user);
