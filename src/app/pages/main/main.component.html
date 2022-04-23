@@ -1,4 +1,6 @@
 <p>main works!</p>
 <app-logout></app-logout>
 
-<app-torrent></app-torrent>
+<li *ngFor="let torrent of torrents">
+  <app-torrent [title]="torrent.title" [desc]="torrent.description"></app-torrent>
+</li>
