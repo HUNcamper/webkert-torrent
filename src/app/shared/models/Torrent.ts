@@ -1,5 +1,5 @@
 export interface Torrent {
-    id: number;
+    id: string;
     user_email: string;
     title: string;
     description: string;

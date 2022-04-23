@@ -1,4 +1,4 @@
 export interface Torrent {
-  id: number;
+  id: string;
   name: string;
 }
