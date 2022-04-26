@@ -4,6 +4,11 @@ mat-card {
   margin: 20px;
 }
 
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 mat-card img {
   object-fit: cover;
   width: 100%;
