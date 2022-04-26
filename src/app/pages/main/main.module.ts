@@ -11,6 +11,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { FilterComponent } from './filter/filter.component';
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatCardModule,
     MatIconModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTooltipModule
   ]
 })
 export class MainModule { }
