@@ -20,5 +20,15 @@ export class MainComponent implements OnInit {
     });
   }
 
+  chooseFilter($event: Array<string>) {
+    console.log("GOT: " + $event);
+    this.torrentService.getByTypeId($event).subscribe(data => {
+      this.torrents = data;
+    }, error => {
+      console.error(error);
+    });
+    // TODO: re-query the torrents with the selected types
+  }
+
 
 }

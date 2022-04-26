@@ -25,6 +25,11 @@ export class TorrentService {
     return this.afs.collection<Torrent>(this.collectionName).doc(id).valueChanges();
   }
 
+  getByTypeId(types: Array<string>) {
+    if (types.length === 0) return this.getAll();
+    return this.afs.collection<Torrent>(this.collectionName, ref => ref.where('type_id', 'in', types)).valueChanges();
+  }
+
   update(torrent: Torrent) {
     return this.afs.collection<Torrent>(this.collectionName).doc(torrent.id).set(torrent);
   }

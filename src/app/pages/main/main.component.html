@@ -1,9 +1,8 @@
 <p>main works!</p>
 <app-logout></app-logout>
-
+<br>
+<app-filter (filterEvent)="chooseFilter($event)"></app-filter>
+<br>
 <div style="display:flex; flex-direction: row; width: 100%; margin: 0 auto; align-items: center; justify-content: center; flex-wrap: wrap;">
-  <app-torrent *ngFor="let torrent of torrents" [title]="torrent.title" [desc]="torrent.description" [image_url]="torrent.image_url"></app-torrent>
-  <app-torrent *ngFor="let torrent of torrents" [title]="torrent.title" [desc]="torrent.description" [image_url]="torrent.image_url"></app-torrent>
-  <app-torrent *ngFor="let torrent of torrents" [title]="torrent.title" [desc]="torrent.description" [image_url]="torrent.image_url"></app-torrent>
   <app-torrent *ngFor="let torrent of torrents" [title]="torrent.title" [desc]="torrent.description" [image_url]="torrent.image_url"></app-torrent>
 </div>

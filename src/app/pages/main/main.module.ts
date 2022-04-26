@@ -8,13 +8,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import { TorrentComponent } from './torrent/torrent.component';
 import {MatIconModule} from "@angular/material/icon";
+import { FilterComponent } from './filter/filter.component';
+import {MatSelectModule} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     MainComponent,
     LogoutComponent,
-    TorrentComponent
+    TorrentComponent,
+    FilterComponent
   ],
   exports: [
     MainComponent
@@ -24,7 +28,9 @@ import {MatIconModule} from "@angular/material/icon";
     MainRoutingModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }
