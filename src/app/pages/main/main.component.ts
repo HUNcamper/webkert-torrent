@@ -9,10 +9,12 @@ import {Torrent} from "../../shared/models/Torrent";
 })
 export class MainComponent implements OnInit {
   torrents : Array<Torrent> = [];
+  date : number = 0;
 
   constructor(private torrentService: TorrentService) { }
 
   ngOnInit(): void {
+    this.date = Date.now();
     this.torrentService.getAll().subscribe(data => {
       this.torrents = data;
     }, error => {

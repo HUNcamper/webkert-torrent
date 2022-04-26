@@ -1,4 +1,5 @@
-<p>main works!</p>
+<p>{{date | dateFormat}}</p>
+<p>{{date | dateFormat | timeFormat}}</p>
 <app-logout></app-logout>
 <br>
 <app-filter (filterEvent)="chooseFilter($event)"></app-filter>

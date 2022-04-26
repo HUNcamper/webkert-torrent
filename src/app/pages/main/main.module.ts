@@ -12,6 +12,8 @@ import { FilterComponent } from './filter/filter.component';
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {TimeformatPipe} from "../../shared/pipes/timeformat.pipe";
+import {DateformatPipe} from "../../shared/pipes/dateformat.pipe";
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MainComponent,
     LogoutComponent,
     TorrentComponent,
-    FilterComponent
+    FilterComponent,
+    TimeformatPipe,
+    DateformatPipe
   ],
   exports: [
     MainComponent
