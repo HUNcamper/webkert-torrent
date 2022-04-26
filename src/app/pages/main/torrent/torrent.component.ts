@@ -9,7 +9,7 @@ export class TorrentComponent implements OnInit {
 
   @Input() title = '';
   @Input() desc = '';
-  @Input() image = '';
+  @Input() image_url = '';
 
   constructor() { }
 
