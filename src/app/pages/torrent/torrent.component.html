@@ -17,7 +17,14 @@
 </div>
 <h3 *ngIf="torrent?.verified"><mat-icon matTooltip="Verified By Admins" aria-hidden="false" aria-label="Verified icon">verified_user</mat-icon> This Torrent has been verified to work well and to be virus free by Admins</h3>
 
-<mat-form-field class="example-full-width" appearance="fill">
-  <mat-label>Leave a comment</mat-label>
-  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-</mat-form-field>
+<form class="main_component" [formGroup]="commentForm" (ngSubmit)="submitComment()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..." formControlName="comment"></textarea>
+  </mat-form-field>
+  <span><button mat-raised-button color="primary" type="submit">Submit Comment</button></span>
+</form>
+
+<div>
+  <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+</div>

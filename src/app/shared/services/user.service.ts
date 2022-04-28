@@ -25,6 +25,10 @@ export class UserService {
     return this.afs.collection<User>(this.collectionName).doc(id).valueChanges();
   }
 
+  getByEmail(email: string) {
+    return this.afs.collection<User>(this.collectionName, ref => ref.where('email', '==', email).limit(1)).valueChanges();
+  }
+
   update(user: User) {
     return this.afs.collection<User>(this.collectionName).doc(user.id).set(user);
   }

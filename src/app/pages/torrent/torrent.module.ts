@@ -9,11 +9,14 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import { CommentComponent } from './comment/comment.component';
 
 
 @NgModule({
   declarations: [
-    TorrentComponent
+    TorrentComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ import {MatInputModule} from "@angular/material/input";
     MatButtonModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class TorrentModule { }
