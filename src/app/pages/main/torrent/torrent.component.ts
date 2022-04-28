@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Torrent} from "../../../shared/models/Torrent";
 
 @Component({
   selector: 'app-torrent',
@@ -7,9 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TorrentComponent implements OnInit {
 
-  @Input() title = '';
-  @Input() desc = '';
-  @Input() image_url = '';
+  @Input() torrent : Torrent | undefined;
 
   constructor() { }
 

@@ -13,6 +13,7 @@ const routes: Routes = [
     redirectTo: '/main',
     pathMatch: 'full'
   },
+  { path: 'torrent/:id', loadChildren: () => import('./pages/torrent/torrent.module').then(m => m.TorrentModule), canActivate: [AuthGuard] },
   {
     path: '**',
     redirectTo: '/not-found'

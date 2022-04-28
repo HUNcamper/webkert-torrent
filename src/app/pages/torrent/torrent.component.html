@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <mat-card class="mat-elevation-z2 outline">
+    <div class="loading-indicator" *ngIf="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+    <img *ngIf="!loading" mat-card-lg-image src="{{torrent?.image_url}}" alt="{{torrent?.title}}">
+    <mat-card-title-group *ngIf="!loading">
+      <mat-card-title>{{torrent?.title}}</mat-card-title>
+      <mat-card-subtitle>{{torrent?.description}}</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-actions *ngIf="!loading">
+      <a href="/main"><button mat-button color="accent">Go Back</button></a>
+      <button mat-raised-button color="primary">Download</button>
+    </mat-card-actions>
+  </mat-card>
+  <p>{{torrent?.details}}</p>
+</div>
+<h3 *ngIf="torrent?.verified"><mat-icon matTooltip="Verified By Admins" aria-hidden="false" aria-label="Verified icon">verified_user</mat-icon> This Torrent has been verified to work well and to be virus free by Admins</h3>
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Leave a comment</mat-label>
+  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+</mat-form-field>

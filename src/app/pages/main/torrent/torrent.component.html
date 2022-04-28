@@ -1,11 +1,11 @@
 <mat-card class="mat-elevation-z2 outline">
-  <img mat-card-lg-image src="{{image_url}}" alt="{{title}}">
+  <img mat-card-lg-image src="{{torrent?.image_url}}" alt="{{torrent?.title}}">
   <mat-card-title-group>
-    <mat-card-title>{{title}} <mat-icon matTooltip="Verified By Admins" aria-hidden="false" aria-label="Verified icon">verified_user</mat-icon></mat-card-title>
-    <mat-card-subtitle>{{desc}}</mat-card-subtitle>
+    <mat-card-title>{{torrent?.title}} <mat-icon *ngIf="torrent?.verified" matTooltip="Verified By Admins" aria-hidden="false" aria-label="Verified icon">verified_user</mat-icon></mat-card-title>
+    <mat-card-subtitle>{{torrent?.description}}</mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-actions>
-    <button mat-button color="accent">Details</button>
+    <a href="/torrent/{{torrent?.id}}"><button mat-button color="accent">Details</button></a>
     <button mat-raised-button color="primary">Download</button>
   </mat-card-actions>
 </mat-card>
