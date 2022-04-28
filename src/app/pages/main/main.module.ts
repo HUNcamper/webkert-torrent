@@ -14,6 +14,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {TimeformatPipe} from "../../shared/pipes/timeformat.pipe";
 import {DateformatPipe} from "../../shared/pipes/dateformat.pipe";
+import {HighlightDirective} from "../../shared/directives/highlight.directive";
+import {UnderlineDirective} from "../../shared/directives/underline.directive";
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {DateformatPipe} from "../../shared/pipes/dateformat.pipe";
     TorrentComponent,
     FilterComponent,
     TimeformatPipe,
-    DateformatPipe
+    DateformatPipe,
+    HighlightDirective,
+    UnderlineDirective
   ],
   exports: [
     MainComponent
