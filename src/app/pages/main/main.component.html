@@ -1,9 +1,10 @@
-<p>{{date | dateFormat}}</p>
-<p>{{date | dateFormat | timeFormat}}</p>
-<app-logout></app-logout>
-<br>
-<app-filter (filterEvent)="chooseFilter($event)"></app-filter>
-<br>
+<div style="display:flex; flex-direction: row; width: 100%; margin: 0 auto; align-items: center; justify-content: center; flex-wrap: wrap;">
+  <p>The time is {{date | dateFormat | timeFormat}}</p>
+  <app-logout></app-logout>
+</div>
+<div style="text-align: center;">
+  <app-filter (filterEvent)="chooseFilter($event)"></app-filter>
+</div>
 <div style="display:flex; flex-direction: row; width: 100%; margin: 0 auto; align-items: center; justify-content: center; flex-wrap: wrap;">
   <app-torrent *ngFor="let torrent of torrents" [torrent]="torrent"></app-torrent>
 </div>
