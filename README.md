@@ -1,4 +1,4 @@
-Firebase Hosting: [webkert-torrent.web.app/](webkert-torrent.web.app/)
+Firebase Hosting: [https://webkert-torrent.web.app/](https://webkert-torrent.web.app/)
 
 # WebkertTorrent
 
