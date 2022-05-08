@@ -1,9 +1,9 @@
 <div style="display:flex; flex-direction: row; width: 100%; margin: 0 auto; align-items: center; justify-content: center; flex-wrap: wrap;">
-  <p appUnderline>The time is <span appHighlight>{{date | dateFormat | timeFormat}}</span></p>
-  <app-logout></app-logout>
+  <p appUnderline style="margin: 16px;">The time is <span appHighlight>{{date | dateFormat | timeFormat}}</span></p>
 </div>
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: 8px; display:flex; flex-direction: row; align-items: center; justify-content: space-around;">
   <app-filter (filterEvent)="chooseFilter($event)"></app-filter>
+  <app-logout></app-logout>
 </div>
 <div style="display:flex; flex-direction: row; width: 100%; margin: 0 auto; align-items: center; justify-content: center; flex-wrap: wrap;">
   <app-torrent *ngFor="let torrent of torrents" [torrent]="torrent"></app-torrent>
