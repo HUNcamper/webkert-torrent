@@ -1,3 +1,4 @@
+Discord: camper#6910
 Firebase Hosting: [https://webkert-torrent.web.app/](https://webkert-torrent.web.app/)
 
 # WebkertTorrent
